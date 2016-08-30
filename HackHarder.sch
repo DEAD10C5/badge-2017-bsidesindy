@@ -6,7 +6,7 @@
 <setting alwaysvectorfont="no"/>
 <setting verticaltext="up"/>
 </settings>
-<grid distance="0.1" unitdist="inch" unit="inch" style="lines" multiple="1" display="no" altdistance="0.01" altunitdist="inch" altunit="inch"/>
+<grid distance="0.1" unitdist="inch" unit="inch" style="lines" multiple="1" display="yes" altdistance="0.01" altunitdist="inch" altunit="inch"/>
 <layers>
 <layer number="1" name="Top" color="4" fill="1" visible="no" active="no"/>
 <layer number="16" name="Bottom" color="1" fill="1" visible="no" active="no"/>
@@ -831,22 +831,18 @@ W = angled&lt;p&gt;
 <part name="CN1" library="adafruit" deviceset="JST_2PIN" device="-SMT-RA"/>
 <part name="SUPPLY1" library="supply2" deviceset="GND" device=""/>
 <part name="SUPPLY4" library="supply2" deviceset="VCC" device=""/>
-<part name="SUPPLY6" library="supply2" deviceset="VCC" device=""/>
-<part name="SUPPLY7" library="supply2" deviceset="VCC" device=""/>
-<part name="SUPPLY8" library="supply2" deviceset="VCC" device=""/>
-<part name="SUPPLY9" library="supply2" deviceset="VCC" device=""/>
 <part name="U1" library="HopeRF-RFMxx" deviceset="RFM69HW" device=""/>
 <part name="MCU1" library="adafruit" deviceset="PRO_TRINKET" device=""/>
 <part name="SV1" library="con-lstb" deviceset="MA04-1" device=""/>
 <part name="SUPPLY2" library="supply2" deviceset="GND" device=""/>
 <part name="SUPPLY3" library="supply2" deviceset="GND" device=""/>
 <part name="SUPPLY10" library="supply2" deviceset="VCC" device=""/>
-<part name="SW2" library="adafruit" deviceset="SWITCH_PUSHBUTTON" device="EVQ-PE"/>
-<part name="SW1" library="adafruit" deviceset="SWITCH_PUSHBUTTON" device="EVQ-PE"/>
-<part name="SW3" library="adafruit" deviceset="SWITCH_PUSHBUTTON" device="EVQ-PE"/>
-<part name="SW4" library="adafruit" deviceset="SWITCH_PUSHBUTTON" device="EVQ-PE"/>
 <part name="SUPPLY5" library="supply2" deviceset="VCC" device=""/>
 <part name="SUPPLY11" library="supply2" deviceset="GND" device=""/>
+<part name="SW1" library="adafruit" deviceset="SWITCH_PUSHBUTTON" device="EVQ-PE"/>
+<part name="SW2" library="adafruit" deviceset="SWITCH_PUSHBUTTON" device="EVQ-PE"/>
+<part name="SW3" library="adafruit" deviceset="SWITCH_PUSHBUTTON" device="EVQ-PE"/>
+<part name="SW4" library="adafruit" deviceset="SWITCH_PUSHBUTTON" device="EVQ-PE"/>
 </parts>
 <sheets>
 <sheet>
@@ -855,23 +851,19 @@ W = angled&lt;p&gt;
 <instances>
 <instance part="CN1" gate="G$1" x="48.26" y="91.44" rot="R90"/>
 <instance part="SUPPLY1" gate="GND" x="45.72" y="78.74"/>
-<instance part="SUPPLY4" gate="G$1" x="53.34" y="50.8" rot="R270"/>
-<instance part="SUPPLY6" gate="G$1" x="93.98" y="45.72" rot="R270"/>
-<instance part="SUPPLY7" gate="G$1" x="93.98" y="53.34" rot="R270"/>
-<instance part="SUPPLY8" gate="G$1" x="93.98" y="30.48" rot="R270"/>
-<instance part="SUPPLY9" gate="G$1" x="93.98" y="38.1" rot="R270"/>
+<instance part="SUPPLY4" gate="G$1" x="99.06" y="50.8" rot="R270"/>
 <instance part="U1" gate="G$1" x="-33.02" y="53.34" rot="R180"/>
 <instance part="MCU1" gate="G$1" x="25.4" y="45.72"/>
 <instance part="SV1" gate="1" x="-33.02" y="30.48" rot="R270"/>
 <instance part="SUPPLY2" gate="GND" x="50.8" y="55.88" rot="R90"/>
 <instance part="SUPPLY3" gate="GND" x="-35.56" y="7.62"/>
 <instance part="SUPPLY10" gate="G$1" x="-38.1" y="15.24" rot="R180"/>
-<instance part="SW2" gate="G$1" x="81.28" y="45.72"/>
-<instance part="SW1" gate="G$1" x="81.28" y="53.34"/>
-<instance part="SW3" gate="G$1" x="81.28" y="30.48"/>
-<instance part="SW4" gate="G$1" x="81.28" y="38.1"/>
 <instance part="SUPPLY5" gate="G$1" x="-7.62" y="45.72" rot="R270"/>
 <instance part="SUPPLY11" gate="GND" x="-7.62" y="60.96" rot="R90"/>
+<instance part="SW1" gate="G$1" x="68.58" y="45.72"/>
+<instance part="SW2" gate="G$1" x="86.36" y="43.18"/>
+<instance part="SW3" gate="G$1" x="68.58" y="40.64"/>
+<instance part="SW4" gate="G$1" x="86.36" y="38.1"/>
 </instances>
 <busses>
 </busses>
@@ -902,7 +894,26 @@ W = angled&lt;p&gt;
 <segment>
 <pinref part="SUPPLY4" gate="G$1" pin="VCC"/>
 <pinref part="MCU1" gate="G$1" pin="VCC"/>
-<wire x1="50.8" y1="50.8" x2="40.64" y2="50.8" width="0.1524" layer="91"/>
+<wire x1="96.52" y1="50.8" x2="93.98" y2="50.8" width="0.1524" layer="91"/>
+<pinref part="SW1" gate="G$1" pin="P$2"/>
+<wire x1="93.98" y1="50.8" x2="78.74" y2="50.8" width="0.1524" layer="91"/>
+<wire x1="78.74" y1="50.8" x2="76.2" y2="50.8" width="0.1524" layer="91"/>
+<wire x1="76.2" y1="50.8" x2="40.64" y2="50.8" width="0.1524" layer="91"/>
+<wire x1="73.66" y1="45.72" x2="76.2" y2="45.72" width="0.1524" layer="91"/>
+<wire x1="76.2" y1="45.72" x2="76.2" y2="50.8" width="0.1524" layer="91"/>
+<junction x="76.2" y="50.8"/>
+<pinref part="SW3" gate="G$1" pin="P$2"/>
+<wire x1="73.66" y1="40.64" x2="78.74" y2="40.64" width="0.1524" layer="91"/>
+<wire x1="78.74" y1="40.64" x2="78.74" y2="50.8" width="0.1524" layer="91"/>
+<junction x="78.74" y="50.8"/>
+<pinref part="SW2" gate="G$1" pin="P$2"/>
+<wire x1="91.44" y1="43.18" x2="93.98" y2="43.18" width="0.1524" layer="91"/>
+<wire x1="93.98" y1="43.18" x2="93.98" y2="50.8" width="0.1524" layer="91"/>
+<junction x="93.98" y="50.8"/>
+<pinref part="SW4" gate="G$1" pin="P$2"/>
+<wire x1="91.44" y1="38.1" x2="96.52" y2="38.1" width="0.1524" layer="91"/>
+<wire x1="96.52" y1="38.1" x2="96.52" y2="50.8" width="0.1524" layer="91"/>
+<junction x="96.52" y="50.8"/>
 </segment>
 <segment>
 <pinref part="SV1" gate="1" pin="1"/>
@@ -913,26 +924,6 @@ W = angled&lt;p&gt;
 <pinref part="U1" gate="G$1" pin="VCC"/>
 <pinref part="SUPPLY5" gate="G$1" pin="VCC"/>
 <wire x1="-15.24" y1="45.72" x2="-10.16" y2="45.72" width="0.1524" layer="91"/>
-</segment>
-<segment>
-<pinref part="SW3" gate="G$1" pin="P$2"/>
-<pinref part="SUPPLY8" gate="G$1" pin="VCC"/>
-<wire x1="86.36" y1="30.48" x2="91.44" y2="30.48" width="0.1524" layer="91"/>
-</segment>
-<segment>
-<pinref part="SW1" gate="G$1" pin="P$2"/>
-<pinref part="SUPPLY7" gate="G$1" pin="VCC"/>
-<wire x1="86.36" y1="53.34" x2="91.44" y2="53.34" width="0.1524" layer="91"/>
-</segment>
-<segment>
-<pinref part="SW2" gate="G$1" pin="P$2"/>
-<pinref part="SUPPLY6" gate="G$1" pin="VCC"/>
-<wire x1="86.36" y1="45.72" x2="91.44" y2="45.72" width="0.1524" layer="91"/>
-</segment>
-<segment>
-<pinref part="SW4" gate="G$1" pin="P$2"/>
-<pinref part="SUPPLY9" gate="G$1" pin="VCC"/>
-<wire x1="86.36" y1="38.1" x2="91.44" y2="38.1" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$2" class="0">
@@ -994,35 +985,29 @@ W = angled&lt;p&gt;
 <net name="N$12" class="0">
 <segment>
 <pinref part="MCU1" gate="G$1" pin="D6"/>
-<wire x1="40.64" y1="45.72" x2="66.04" y2="45.72" width="0.1524" layer="91"/>
-<wire x1="66.04" y1="45.72" x2="66.04" y2="53.34" width="0.1524" layer="91"/>
 <pinref part="SW1" gate="G$1" pin="P$1"/>
-<wire x1="66.04" y1="53.34" x2="76.2" y2="53.34" width="0.1524" layer="91"/>
+<wire x1="40.64" y1="45.72" x2="63.5" y2="45.72" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$13" class="0">
 <segment>
 <pinref part="MCU1" gate="G$1" pin="D5"/>
-<wire x1="40.64" y1="43.18" x2="68.58" y2="43.18" width="0.1524" layer="91"/>
-<wire x1="68.58" y1="43.18" x2="68.58" y2="45.72" width="0.1524" layer="91"/>
 <pinref part="SW2" gate="G$1" pin="P$1"/>
-<wire x1="68.58" y1="45.72" x2="76.2" y2="45.72" width="0.1524" layer="91"/>
+<wire x1="40.64" y1="43.18" x2="81.28" y2="43.18" width="0.1524" layer="91"/>
 </segment>
 </net>
-<net name="N$9" class="0">
-<segment>
-<pinref part="SW4" gate="G$1" pin="P$1"/>
-<pinref part="MCU1" gate="G$1" pin="D3"/>
-<wire x1="76.2" y1="38.1" x2="40.64" y2="38.1" width="0.1524" layer="91"/>
-</segment>
-</net>
-<net name="N$11" class="0">
+<net name="N$14" class="0">
 <segment>
 <pinref part="MCU1" gate="G$1" pin="D4"/>
-<wire x1="40.64" y1="40.64" x2="68.58" y2="40.64" width="0.1524" layer="91"/>
-<wire x1="68.58" y1="40.64" x2="68.58" y2="30.48" width="0.1524" layer="91"/>
 <pinref part="SW3" gate="G$1" pin="P$1"/>
-<wire x1="68.58" y1="30.48" x2="76.2" y2="30.48" width="0.1524" layer="91"/>
+<wire x1="40.64" y1="40.64" x2="63.5" y2="40.64" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="N$15" class="0">
+<segment>
+<pinref part="MCU1" gate="G$1" pin="D3"/>
+<pinref part="SW4" gate="G$1" pin="P$1"/>
+<wire x1="40.64" y1="38.1" x2="81.28" y2="38.1" width="0.1524" layer="91"/>
 </segment>
 </net>
 </nets>
