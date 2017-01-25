@@ -1,6 +1,7 @@
 # Required Badge parts
 
 use the links provded to order the ESP8266 and the OLED so it matches up to the holes in the PCB.
+The battery and case are available on ebay. These will be stuck to the back of the board using the VHB tape, which is available from amazon or target stores.
 
 | count | part | est cost |
 | --- | --- | --- |
