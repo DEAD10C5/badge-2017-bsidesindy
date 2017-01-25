@@ -12,7 +12,7 @@ The battery and case are available on ebay. These will be stuck to the back of t
 | 5 | [switches]( http://www.digikey.com/product-detail/en/te-connectivity-alcoswitch-switches/1825910-6/450-1650-ND/1632536 ) | $0.10 |
 | 1 | [VHB tape for battery] (https://www.amazon.com/Tape-RP32-width-length-Roll/dp/B007Y7E0CQ) | $3 |
 
-# Optional Badge parts & Supplies
+# Prototyping Supplies
 
 These are optional pieces, only one breadboard is needed. 
 
@@ -20,3 +20,4 @@ These are optional pieces, only one breadboard is needed.
 | --- | --- | --- |
 | 1 | [ small breadboard] (  https://www.adafruit.com/products/64 ) | $5 | 
 | 1 | [ Large breadboard] ( https://www.adafruit.com/products/443 )  | $20 |
+| 1 | [ Jumper wires] ( https://www.adafruit.com/products/153 ) | $6 | 
