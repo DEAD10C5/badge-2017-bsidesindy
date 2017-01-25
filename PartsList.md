@@ -1,5 +1,7 @@
 # Required Badge parts
 
+use the links provded to order the ESP8266 and the OLED so it matches up to the holes in the PCB.
+
 | count | part | est cost |
 | --- | --- | --- |
 | 1 | [NodeMCU LUA WiFi Internet Development Board V3 Wireless module Based CH340 ESP8266 EK1677 Arduino Compatible]( https://m.aliexpress.com/item/32723619934.html )| $4 |
@@ -10,6 +12,8 @@
 | 1 | [VHB tape for battery] (https://www.amazon.com/Tape-RP32-width-length-Roll/dp/B007Y7E0CQ) | $3 |
 
 # Optional Badge parts & Supplies
+
+These are optional pieces, only one breadboard is needed. 
 
 | count | part | est cost |
 | --- | --- | --- |
