@@ -11,6 +11,7 @@ The battery and case are available on ebay. These will be stuck to the back of t
 | 1 | Storage Box Case For 3.7v Li-ion 18650 Rechargeable Battery 2 Pins | $3 |
 | 5 | [switches]( http://www.digikey.com/product-detail/en/te-connectivity-alcoswitch-switches/1825910-6/450-1650-ND/1632536 ) | $0.10 |
 | 1 | [VHB tape for battery] (https://www.amazon.com/Tape-RP32-width-length-Roll/dp/B007Y7E0CQ) | $3 |
+| 1 | [micro USB cable to program ESP8266] (https://www.amazon.com/dp/B01EK87A82/) | $5 | 
 
 # Prototyping Supplies
 
