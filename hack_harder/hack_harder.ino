@@ -45,8 +45,9 @@ All text above, and the splash screen must be included in any redistribution
 /************************* 
   WiFi Access Point 
 **************************/
-#define WLAN_SSID       ""
+#define WLAN_SSID       "" // home wifi or AP on raspi
 #define WLAN_PASS       ""
+
 /*************************
   Adafruit.io Setup ******
 **************************/
@@ -84,32 +85,22 @@ void MQTT_connect();
 void setup() {
   Serial.begin(115200);
   delay(10);
-
-  // by default, we'll generate the high voltage from the 3.3v line internally! (neat!)
-  display.begin(SSD1306_SWITCHCAPVCC, 0x3C);  // initialize with the I2C addr 0x3C (for the 128x32)
-
-  display.setTextSize(1);
-  display.setTextColor(WHITE);
-  display.setCursor(0,0);
-  display.println("Hello, world!");
-  display.setTextColor(BLACK, WHITE); // 'inverted' text
-  display.display();
-  delay(2000);
-  display.clearDisplay();
-  
+ 
   // Connect to WiFi access point.
   Serial.print("Connecting to ");
   Serial.println(WLAN_SSID);
 
+ // by default, we'll generate the high voltage from the 3.3v line internally! (neat!)
+  display.begin(SSD1306_SWITCHCAPVCC, 0x3C);  // initialize with the I2C addr 0x3C (for the 128x32)
+  display.clearDisplay();
   display.setTextSize(1);
   display.setTextColor(WHITE);
   display.setCursor(0,0);
-  display.print("Connecting to");
-  display.println(WLAN_SSID);
-  //display.setTextColor(BLACK, WHITE); // 'inverted' text
+  display.println("Connecting to: ");
   display.display();
-  delay(2000);
-  display.clearDisplay();
+  display.println(WLAN_SSID);
+  display.display();
+  //display.clearDisplay();
   
   WiFi.begin(WLAN_SSID, WLAN_PASS);
   while (WiFi.status() != WL_CONNECTED) {
@@ -118,28 +109,22 @@ void setup() {
   }
   Serial.println("WiFi connected");
   Serial.println("IP address: "); Serial.println(WiFi.localIP());
-
-  display.setTextSize(1);
-  display.setTextColor(WHITE);
-  display.setCursor(0,0);
-  display.print("WiFi connected.");
-  display.println("IP address: ");
-  display.print(WiFi.localIP());
-  //display.setTextColor(BLACK, WHITE); // 'inverted' text
+  display.println("WiFi connected.");
   display.display();
-  delay(2000);
-  display.clearDisplay();
+
   
   // Setup MQTT subscription for onoff feed.
   mqtt.subscribe(&toBadge);
 }
 
 void loop() {
+  display.println("Connecting to MQTT");
+  display.display();
   MQTT_connect();
   Adafruit_MQTT_Subscribe *subscription;
   while ((subscription = mqtt.readSubscription(5000))) {
     if (subscription == &toBadge) {
-      Serial.println((char *)toBadge.lastread);
+      //Serial.println((char *)toBadge.lastread);
     }
   }
 
