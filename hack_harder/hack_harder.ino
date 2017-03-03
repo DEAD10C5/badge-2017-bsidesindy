@@ -1,4 +1,13 @@
 /***************************************************
+ 
+ _                _      _                   _           
+| |__   __ _  ___| | __ | |__   __ _ _ __ __| | ___ _ __ 
+| '_ \ / _` |/ __| |/ / | '_ \ / _` | '__/ _` |/ _ \ '__|
+| | | | (_| | (__|   <  | | | | (_| | | | (_| |  __/ |   
+|_| |_|\__,_|\___|_|\_\ |_| |_|\__,_|_|  \__,_|\___|_|   
+                                                         
+  
+  
   Adafruit MQTT Library ESP8266 Example
 
   Must use ESP8266 Arduino from:
@@ -14,8 +23,7 @@
 
   Written by Tony DiCola for Adafruit Industries.
   MIT license, all text above must be included in any redistribution
- ****************************************************/
- /*********************************************************************
+ ********************************************************************
 This is an example for our Monochrome OLEDs based on SSD1306 drivers
 
   Pick one up today in the adafruit shop!
@@ -42,11 +50,6 @@ All text above, and the splash screen must be included in any redistribution
 #include <Adafruit_GFX.h>
 #include <Adafruit_SSD1306.h>
 
-/************************* 
-  WiFi Access Point 
-**************************/
-#define WLAN_SSID       "" // home wifi or AP on raspi
-#define WLAN_PASS       ""
 
 /*************************
   Adafruit.io Setup ******
@@ -63,6 +66,12 @@ Adafruit_SSD1306 display(OLED_RESET);
 char handle[ ] = "p0lr";
 char input[ ] = "";
 bool inputComplete = false;
+int BUTTON_PIN = D2; //button is connected to GPIO pin D1
+const char* ssid = "ATT88mzH3F";
+const char* password = "8g2s%hsr9ssu";
+//const char* mqtt_server = "broker.mqttdashboard.com";
+//const char* mqtt_server = "iot.eclipse.org";
+
 /************ Global State (you don't need to change this!) ******************/
 // Create an ESP8266 WiFiClient class to connect to the MQTT server.
 // WiFiClient client;
@@ -70,9 +79,11 @@ bool inputComplete = false;
 WiFiClientSecure client;
 // Setup the MQTT client class by passing in the WiFi client and MQTT server and login details.
 Adafruit_MQTT_Client mqtt(&client, AIO_SERVER, AIO_SERVERPORT, AIO_USERNAME, AIO_KEY);
+
 /****************************** Feeds ***************************************/
 Adafruit_MQTT_Publish toServer = Adafruit_MQTT_Publish(&mqtt, AIO_USERNAME "/feeds/toServer");
 Adafruit_MQTT_Subscribe toBadge = Adafruit_MQTT_Subscribe(&mqtt, AIO_USERNAME "/feeds/toBadge");
+
 /*************************** Sketch Code ************************************/
 // Bug workaround for Arduino 1.6.6, it seems to need a function declaration
 // for some reason (only affects ESP8266, likely an arduino-builder bug).
@@ -82,44 +93,21 @@ void MQTT_connect();
 #error("Height incorrect, please fix Adafruit_SSD1306.h!");
 #endif
 
+
 void setup() {
   Serial.begin(115200);
   delay(10);
- 
-  // Connect to WiFi access point.
-  Serial.print("Connecting to ");
-  Serial.println(WLAN_SSID);
-
- // by default, we'll generate the high voltage from the 3.3v line internally! (neat!)
-  display.begin(SSD1306_SWITCHCAPVCC, 0x3C);  // initialize with the I2C addr 0x3C (for the 128x32)
-  display.clearDisplay();
-  display.setTextSize(1);
-  display.setTextColor(WHITE);
-  display.setCursor(0,0);
-  display.println("Connecting to: ");
-  display.display();
-  display.println(WLAN_SSID);
-  display.display();
-  //display.clearDisplay();
-  
-  WiFi.begin(WLAN_SSID, WLAN_PASS);
-  while (WiFi.status() != WL_CONNECTED) {
-    delay(500);
-    Serial.println(WiFi.status());
-  }
-  Serial.println("WiFi connected");
-  Serial.println("IP address: "); Serial.println(WiFi.localIP());
-  display.println("WiFi connected.");
-  display.display();
-
+  setup_display();
+  setup_wifi();
+  pinMode(BUTTON_PIN,INPUT);
   
   // Setup MQTT subscription for onoff feed.
   mqtt.subscribe(&toBadge);
 }
 
 void loop() {
-  display.println("Connecting to MQTT");
-  display.display();
+  int status;
+  
   MQTT_connect();
   Adafruit_MQTT_Subscribe *subscription;
   while ((subscription = mqtt.readSubscription(5000))) {
@@ -128,6 +116,17 @@ void loop() {
     }
   }
 
+  // Check for any button press
+  // we will use this to simulate sensor data
+  status=digitalRead(BUTTON_PIN);
+  String msg="Button pressed";
+  if(status==HIGH )
+  {
+    Serial.println(msg);
+    display.println(msg);
+    display.display();
+  } 
+  
   //Check to see if there is any serial data inbound
   if (Serial.available() > 0) {
   // read the incoming byte:
@@ -138,7 +137,6 @@ void loop() {
       inputComplete = true;
     }
   }
-
 
   // Now we can publish stuff!
   if (inputComplete) {
@@ -161,6 +159,34 @@ void loop() {
   }
 }
 
+void setup_display() {
+  // by default, we'll generate the high voltage from the 3.3v line 
+  // internally! (neat!)
+  // initialize with the I2C addr 0x3C (for the 128x32)
+  display.begin(SSD1306_SWITCHCAPVCC, 0x3C);  
+  display.clearDisplay();
+  display.setTextSize(1);
+  display.setTextColor(WHITE);
+  display.setCursor(0,0);  
+}
+
+void setup_wifi() {
+  delay(100);
+  Serial.print("Connecting to ");
+  Serial.println(ssid);
+  WiFi.begin(ssid, password);
+    while (WiFi.status() != WL_CONNECTED) 
+    {
+      delay(500);
+      Serial.print(".");
+    }
+  randomSeed(micros());
+  String msg="WiFi Connected!\nIP address: " + WiFi.localIP();
+  Serial.println(msg);
+  display.println(msg);
+  display.display();
+}
+
 // Function to connect and reconnect as necessary to the MQTT server.
 // Should be called in the loop function and it will take care if connecting.
 void MQTT_connect() {
@@ -171,8 +197,11 @@ void MQTT_connect() {
     return;
   }
 
-  Serial.print("Connecting to MQTT... ");
-
+  String msg="Connecting to MQTT... ";
+  Serial.println(msg);
+  display.println(msg);
+  display.display();
+  
   uint8_t retries = 3;
   while ((ret = mqtt.connect()) != 0) { // connect will return 0 for connected
        Serial.println(mqtt.connectErrorString(ret));
@@ -185,6 +214,9 @@ void MQTT_connect() {
          while (1);
        }
   }
-  Serial.println("MQTT Connected!");
+  msg = "MQTT Connected!";
+  Serial.println(msg);
+  display.println(msg);
+  display.display();
+  
 }
-
