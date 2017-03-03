@@ -67,10 +67,11 @@ char handle[ ] = "p0lr";
 char input[ ] = "";
 bool inputComplete = false;
 int BUTTON_PIN = D2; //button is connected to GPIO pin D1
-const char* ssid = "ATT88mzH3F";
-const char* password = "8g2s%hsr9ssu";
+const char* ssid = "";
+const char* password = "";
 //const char* mqtt_server = "broker.mqttdashboard.com";
 //const char* mqtt_server = "iot.eclipse.org";
+//const char* mqtt_server = "io.adafruit.com"
 
 /************ Global State (you don't need to change this!) ******************/
 // Create an ESP8266 WiFiClient class to connect to the MQTT server.
