@@ -101,6 +101,7 @@ void setup() {
   setup_display();
   setup_wifi();
   pinMode(BUTTON_PIN,INPUT);
+  pinMode(LED_BUILTIN, OUTPUT); // initialize the on-board LED
   
   // Setup MQTT subscription for onoff feed.
   mqtt.subscribe(&toBadge);
@@ -121,8 +122,9 @@ void loop() {
   // we will use this to simulate sensor data
   status=digitalRead(BUTTON_PIN);
   String msg="Button pressed";
-  if(status==HIGH )
+  if(status==LOW )
   {
+    digitalWrite(LED_BUILTIN, LOW);   // Turn the LED on
     Serial.println(msg);
     display.println(msg);
     display.display();
@@ -141,6 +143,7 @@ void loop() {
 
   // Now we can publish stuff!
   if (inputComplete) {
+    digitalWrite(LED_BUILTIN, HIGH);
     char post[ ] = "";
     strcat(post, handle);
     strcat(post, ": ");
