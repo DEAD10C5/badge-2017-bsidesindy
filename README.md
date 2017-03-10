@@ -37,6 +37,6 @@ Edit the file Library/Arduino15/packages/esp8266/hardware/esp8266/<version>/plat
 
 Around line 116, modify the 'tools.esptool.upload.pattern' line to read:
 
-tools.esptool.upload.pattern="/opt/local/Library/Frameworks/Python.framework/Versions/2.7/bin/esptool.py" --port "{serial.por    t}" write_flash 0x00000 "{build.path}/{build.project_name}.bin"
+tools.esptool.upload.pattern="/opt/local/Library/Frameworks/Python.framework/Versions/2.7/bin/esptool.py" --port "{serial.port}" write_flash 0x00000 "{build.path}/{build.project_name}.bin"
 
 (replace the esptool.py line above with the path to your installed esptool.  Find it by running the command 'which esptool.py' after installing esptool).
