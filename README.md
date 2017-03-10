@@ -11,7 +11,7 @@ https://github.com/jdunmire/kicad-ESP8266
 
 Using the ESP8266 on OS X is kind of fun.
 
-You need to do three things:
+You need to do four things:
 - Install the SILabs Serial Port driver
 - Install the Arduino IDE driver for ESP8266
 - Install esptool.py for OSX
