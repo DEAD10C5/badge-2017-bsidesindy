@@ -1,5 +1,9 @@
 https://www.reddit.com/r/esp8266/wiki/index
 
+### this is a great resource!
+
+https://github.com/nodemcu/nodemcu-devkit-v1.0
+
 #libraries
 https://github.com/jdunmire/kicad-ESP8266
 
