@@ -1,5 +1,8 @@
-#
-# https://www.sparkfun.com/products/97
+###
+https://learn.sparkfun.com/tutorials/using-eagle-schematic
+
+### push buttons
+ https://www.sparkfun.com/products/97
 
 I have ordered a bunch of this push buttons. These push buttons fit easily into a breadboard. However, now that I have my prototype working and I am making a schematic in Eagle, I have no idea what the dimensions are to make my switch component in Eagle. It is very frustrating and time wasting.
  M-Short / about 2 years ago /  1
