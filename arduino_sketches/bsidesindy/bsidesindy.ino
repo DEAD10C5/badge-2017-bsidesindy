@@ -54,7 +54,8 @@ All text above, and the splash screen must be included in any redistribution
 /*************************
   Adafruit.io Setup ******
 **************************/
-#define AIO_SERVER      "io.adafruit.com"
+// #define AIO_SERVER "io.adafruit.com"
+#define AIO_SERVER      "6.6.6.1" 
 #define AIO_SERVERPORT  8883                   // use 8883 for SSL
 #define AIO_USERNAME    ""
 #define AIO_KEY         ""
@@ -66,9 +67,9 @@ Adafruit_SSD1306 display(OLED_RESET);
 char handle[ ] = "p0lr";
 char input[ ] = "";
 bool inputComplete = false;
-int BUTTON_PIN = D2; //button is connected to GPIO pin D1
-const char* ssid = "";
-const char* password = "";
+int switchPin = D3;              // switch is connected to pin D3
+const char* ssid = "batpack";
+const char* password = "batpack";
 //const char* mqtt_server = "broker.mqttdashboard.com";
 //const char* mqtt_server = "iot.eclipse.org";
 //const char* mqtt_server = "io.adafruit.com"
@@ -100,7 +101,7 @@ void setup() {
   delay(10);
   setup_display();
   setup_wifi();
-  pinMode(BUTTON_PIN,INPUT);
+  pinMode(switchPin, INPUT);    // Set the switch pin as input
   pinMode(LED_BUILTIN, OUTPUT); // initialize the on-board LED
   
   // Setup MQTT subscription for onoff feed.
@@ -119,16 +120,21 @@ void loop() {
   }
 
   // Check for any button press
-  // we will use this to simulate sensor data
-  status=digitalRead(BUTTON_PIN);
+  val = digitalRead(switchPin);   // read input value and store it in val
   String msg="Button pressed";
-  if(status==LOW )
-  {
-    digitalWrite(LED_BUILTIN, LOW);   // Turn the LED on
+  if (val == HIGH) {               // check if the button is pressed
+    digitalWrite(LED_BUILTIN, LOW);   // turn LED on
+    String msg="Button pressed";
     Serial.println(msg);
     display.println(msg);
     display.display();
-  } 
+    delay(1000);
+    digitalWrite(LED_BUILTIN, HIGH);  // turn LED off
+    delay(500);
+  } else {
+    digitalWrite(LED_BUILTIN, HIGH);
+    Serial.println("Nothing just happened");
+  }
   
   //Check to see if there is any serial data inbound
   if (Serial.available() > 0) {
