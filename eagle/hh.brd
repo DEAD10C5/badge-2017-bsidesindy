@@ -173,6 +173,9 @@
 <wire x1="59.36465" y1="0.33181875" x2="53.746" y2="0.216140625" width="0.001" layer="20"/>
 <wire x1="53.746" y1="0.216140625" x2="48.11515" y2="0.14091875" width="0.001" layer="20"/>
 <hole x="163.83" y="43.18" drill="3.2"/>
+<text x="135" y="42" size="1.778" layer="22" rot="MR0">2017 @indybsides </text>
+<text x="111" y="47" size="1.778" layer="21">@p0lr_ @theDevilsVoice</text>
+<text x="107" y="38" size="1.778" layer="21">Have good lulz, have good hacks.</text>
 </plain>
 <libraries>
 <library name="switch-omron">
