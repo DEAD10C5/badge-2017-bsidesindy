@@ -6,7 +6,7 @@
 <setting alwaysvectorfont="no"/>
 <setting verticaltext="up"/>
 </settings>
-<grid distance="0.5" unitdist="inch" unit="inch" style="lines" multiple="1" display="yes" altdistance="0.01" altunitdist="inch" altunit="inch"/>
+<grid distance="0.1" unitdist="inch" unit="inch" style="lines" multiple="1" display="no" altdistance="0.01" altunitdist="inch" altunit="inch"/>
 <layers>
 <layer number="1" name="Top" color="4" fill="1" visible="no" active="no"/>
 <layer number="16" name="Bottom" color="1" fill="1" visible="no" active="no"/>
@@ -623,9 +623,7 @@
 <part name="S4" library="switch-omron" deviceset="10-XX" device=""/>
 <part name="U$1" library="ESP12E_DEVKIT" deviceset="ESP12E_DEVKIT" device=""/>
 <part name="FRAME1" library="frames" deviceset="FRAME_A_L" device=""/>
-<part name="GND1" library="supply1" deviceset="GND" device=""/>
 <part name="GND2" library="supply1" deviceset="GND" device=""/>
-<part name="P+1" library="supply1" deviceset="VCC" device=""/>
 <part name="P+2" library="supply1" deviceset="VCC" device=""/>
 <part name="JP1" library="pinhead" deviceset="PINHD-1X4" device="" value="OLED"/>
 </parts>
@@ -639,22 +637,61 @@
 <instance part="S2" gate="1" x="22.86" y="119.38"/>
 <instance part="S3" gate="1" x="22.86" y="91.44"/>
 <instance part="S4" gate="1" x="22.86" y="68.58"/>
-<instance part="U$1" gate="G$1" x="119.38" y="93.98"/>
+<instance part="U$1" gate="G$1" x="119.38" y="93.98" rot="R180"/>
 <instance part="FRAME1" gate="G$1" x="-22.86" y="-12.7"/>
 <instance part="FRAME1" gate="G$2" x="149.86" y="-12.7"/>
-<instance part="GND1" gate="1" x="88.9" y="50.8"/>
-<instance part="GND2" gate="1" x="38.1" y="50.8"/>
-<instance part="P+1" gate="VCC" x="76.2" y="50.8" rot="R90"/>
-<instance part="P+2" gate="VCC" x="76.2" y="50.8" rot="R90"/>
-<instance part="JP1" gate="A" x="76.2" y="165.1"/>
+<instance part="GND2" gate="1" x="78.74" y="129.54"/>
+<instance part="P+2" gate="VCC" x="88.9" y="129.54" rot="R90"/>
+<instance part="JP1" gate="A" x="81.28" y="45.72" rot="R90"/>
 </instances>
 <busses>
 </busses>
 <nets>
-<net name="VCC" class="0">
+<net name="GND" class="0">
 <segment>
-<pinref part="P+1" gate="VCC" pin="VCC"/>
-<pinref part="P+2" gate="VCC" pin="VCC"/>
+<pinref part="U$1" gate="G$1" pin="GND@3"/>
+<pinref part="GND2" gate="1" pin="GND"/>
+<wire x1="101.6" y1="109.22" x2="78.74" y2="109.22" width="0.1524" layer="91"/>
+<wire x1="78.74" y1="109.22" x2="78.74" y2="132.08" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="N$1" class="0">
+<segment>
+<pinref part="U$1" gate="G$1" pin="3V3@2"/>
+<wire x1="88.9" y1="129.54" x2="88.9" y2="124.46" width="0.1524" layer="91"/>
+<wire x1="88.9" y1="124.46" x2="101.6" y2="111.76" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="N$3" class="0">
+<segment>
+<pinref part="JP1" gate="A" pin="1"/>
+<pinref part="U$1" gate="G$1" pin="3V3@1"/>
+<wire x1="76.2" y1="43.18" x2="76.2" y2="63.5" width="0.1524" layer="91"/>
+<wire x1="76.2" y1="63.5" x2="101.6" y2="88.9" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="N$4" class="0">
+<segment>
+<pinref part="JP1" gate="A" pin="2"/>
+<pinref part="U$1" gate="G$1" pin="GND@2"/>
+<wire x1="78.74" y1="43.18" x2="78.74" y2="68.58" width="0.1524" layer="91"/>
+<wire x1="78.74" y1="68.58" x2="101.6" y2="91.44" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="N$6" class="0">
+<segment>
+<pinref part="JP1" gate="A" pin="4"/>
+<pinref part="U$1" gate="G$1" pin="D2"/>
+<wire x1="83.82" y1="43.18" x2="83.82" y2="63.5" width="0.1524" layer="91"/>
+<wire x1="83.82" y1="63.5" x2="101.6" y2="81.28" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="N$5" class="0">
+<segment>
+<pinref part="JP1" gate="A" pin="3"/>
+<pinref part="U$1" gate="G$1" pin="D1"/>
+<wire x1="81.28" y1="43.18" x2="81.28" y2="58.42" width="0.1524" layer="91"/>
+<wire x1="81.28" y1="58.42" x2="101.6" y2="78.74" width="0.1524" layer="91"/>
 </segment>
 </net>
 </nets>
