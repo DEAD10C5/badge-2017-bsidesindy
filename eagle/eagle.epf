@@ -12,18 +12,12 @@ UsedLibrary="/home/thedevilsvoice/eagle-7.5.0/lbr/pinhead.lbr"
 UsedLibrary="/home/thedevilsvoice/Downloads/diy-modules.lbr"
 
 [Win_1]
-Type="Control Panel"
-Loc="373 17 972 416"
-State=0
-Number=0
-
-[Win_2]
 Type="Schematic Editor"
-Loc="98 26 1324 797"
+Loc="42 0 641 399"
 State=2
 Number=2
 File="hh.sch"
-View="-4.24302 95.171 141.465 207.859"
+View="-28.9722 -17.5422 262.444 207.834"
 WireWidths=" 0 0.3048 0.6096 0.8128 1.016 1.27 1.4224 1.6764 1.778 1.9304 2.1844 2.54 3.81 6.4516 0.4064 0.1524"
 PadDiameters=" 0.254 0.3048 0.4064 0.6096 0.8128 1.016 1.27 1.4224 1.6764 1.778 1.9304 2.1844 2.54 3.81 6.4516 0"
 PadDrills=" 0.5 0.6 0.7 0.9 1 1.1 1.2 1.3 1.4 1.5 1.6 2 2.2 2.8 3.2 0.8"
@@ -62,16 +56,21 @@ ArcDirection=0
 AddLevel=2
 PadsSameType=0
 Layer=91
-Views=" 1: -4.24302 95.171 141.465 207.859"
 Sheet="1"
+
+[Win_2]
+Type="Control Panel"
+Loc="727 10 1326 409"
+State=2
+Number=0
 
 [Win_3]
 Type="Board Editor"
-Loc="53 138 1343 814"
+Loc="123 76 1413 752"
 State=2
 Number=1
 File="hh.brd"
-View="-91.5008 -27.8945 261.503 80.0919"
+View="-3.21687 8.33422 138.647 51.7315"
 WireWidths=" 0 0.254 0.3048 0.6096 0.8128 1.016 1.27 1.4224 1.6764 1.778 1.9304 2.1844 2.54 3.81 6.4516 0.4064"
 PadDiameters=" 0.254 0.3048 0.4064 0.6096 0.8128 1.016 1.27 1.4224 1.6764 1.778 1.9304 2.1844 2.54 3.81 6.4516 0"
 PadDrills=" 0.5 0.6 0.7 0.9 1 1.1 1.2 1.3 1.4 1.5 1.6 2 2.2 2.8 3.2 0.8"
