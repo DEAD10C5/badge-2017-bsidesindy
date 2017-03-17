@@ -23,17 +23,23 @@ Open the brd file, click "Library" then "use"
 http://learn.acrobotic.com/tutorials/post/esp8266-oled-display-using-i2c
 
 
-### resistors
+### resistors (using internal instead)
 
 http://electronics.stackexchange.com/questions/65015/resistor-and-capacitor-package-types-eagle-cad
 
 Resistors with different power ratings have different standard sizes (for example, 1/8W vs 1/4W). Likewise for capacitors, the part you need to use depends on the type of capacitor (monolithic, ceramic, electrolytic, etc) and the capacitance and voltage ratings. Assuming you are looking at the RCL library, 0207/10 simply means the body of the resistor is 2mm x 7mm and the hole to hole spacing is 10mm. Similarly C050-035x075 means 5mm hole spacing, 3.5mm x 7.5mm outline. You have to figure out (with calipers, for example) if this will work with the parts you are planning to use.
 
-One thing you can do is print the board layout at 1:1 scale on paper before sending it out to the fab to see if the parts fit. You can catch common errors this way.
-Resistors with different power ratings have different standard sizes (for example, 1/8W vs 1/4W). Likewise for capacitors, the part you need to use depends on the type of capacitor (monolithic, ceramic, electrolytic, etc) and the capacitance and voltage ratings. Assuming you are looking at the RCL library, 0207/10 simply means the body of the resistor is 2mm x 7mm and the hole to hole spacing is 10mm. Similarly C050-035x075 means 5mm hole spacing, 3.5mm x 7.5mm outline. You have to figure out (with calipers, for example) if this will work with the parts you are planning to use.
-
-One thing you can do is print the board layout at 1:1 scale on paper before sending it out to the fab to see if the parts fit. You can catch common errors this way.
-
-4.7K pull ups on OLED (two of them)
-
 http://www.instructables.com/id/Draw-Electronic-Schematics-with-CadSoft-EAGLE/step5/Add-resistors/
+
+
+### battery holder
+
+The pins for the battery holder are 7.5cm apart, and 1.5cm wide. I still haven't found an .lbr for this part. The part number is BH-18650-A if you want to try to search for it! 
+
+
+### some notes
+
+One thing you can do is print the board layout at 1:1 scale on paper before sending it out to the fab to see if the parts fit. You can catch common errors this way.
+
+
+
