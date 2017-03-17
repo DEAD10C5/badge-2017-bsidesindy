@@ -6,7 +6,7 @@
 <setting alwaysvectorfont="no"/>
 <setting verticaltext="up"/>
 </settings>
-<grid distance="7.5" unitdist="mm" unit="mm" style="lines" multiple="1" display="yes" altdistance="0.025" altunitdist="inch" altunit="inch"/>
+<grid distance="1" unitdist="mm" unit="mm" style="lines" multiple="1" display="yes" altdistance="0.025" altunitdist="inch" altunit="inch"/>
 <layers>
 <layer number="1" name="Top" color="4" fill="1" visible="yes" active="yes"/>
 <layer number="16" name="Bottom" color="1" fill="1" visible="yes" active="yes"/>
@@ -590,37 +590,37 @@ design rules under a new name.</description>
 </pass>
 </autorouter>
 <elements>
-<element name="S1" library="switch-omron" package="B3F-10XX" value="" x="11.43" y="44.45" rot="R270">
-<attribute name="OC_NEWARK" value="36M3542" x="11.43" y="44.45" size="1.778" layer="27" rot="R270" display="off"/>
-<attribute name="MPN" value="B3F-1000" x="11.43" y="44.45" size="1.778" layer="27" rot="R270" display="off"/>
-<attribute name="MF" value="" x="11.43" y="44.45" size="1.778" layer="27" rot="R270" display="off"/>
-<attribute name="OC_FARNELL" value="176432" x="11.43" y="44.45" size="1.778" layer="27" rot="R270" display="off"/>
+<element name="S1" library="switch-omron" package="B3F-10XX" value="" x="31.58" y="8.7" rot="R270">
+<attribute name="OC_NEWARK" value="36M3542" x="31.58" y="8.7" size="1.778" layer="27" rot="R270" display="off"/>
+<attribute name="MPN" value="B3F-1000" x="31.58" y="8.7" size="1.778" layer="27" rot="R270" display="off"/>
+<attribute name="MF" value="" x="31.58" y="8.7" size="1.778" layer="27" rot="R270" display="off"/>
+<attribute name="OC_FARNELL" value="176432" x="31.58" y="8.7" size="1.778" layer="27" rot="R270" display="off"/>
 </element>
-<element name="S2" library="switch-omron" package="B3F-10XX" value="" x="22.86" y="44.45" rot="R270">
-<attribute name="OC_NEWARK" value="36M3542" x="22.86" y="44.45" size="1.778" layer="27" rot="R270" display="off"/>
-<attribute name="MPN" value="B3F-1000" x="22.86" y="44.45" size="1.778" layer="27" rot="R270" display="off"/>
-<attribute name="MF" value="" x="22.86" y="44.45" size="1.778" layer="27" rot="R270" display="off"/>
-<attribute name="OC_FARNELL" value="176432" x="22.86" y="44.45" size="1.778" layer="27" rot="R270" display="off"/>
+<element name="S2" library="switch-omron" package="B3F-10XX" value="" x="44.16" y="8.7" rot="R270">
+<attribute name="OC_NEWARK" value="36M3542" x="44.16" y="8.7" size="1.778" layer="27" rot="R270" display="off"/>
+<attribute name="MPN" value="B3F-1000" x="44.16" y="8.7" size="1.778" layer="27" rot="R270" display="off"/>
+<attribute name="MF" value="" x="44.16" y="8.7" size="1.778" layer="27" rot="R270" display="off"/>
+<attribute name="OC_FARNELL" value="176432" x="44.16" y="8.7" size="1.778" layer="27" rot="R270" display="off"/>
 </element>
-<element name="S3" library="switch-omron" package="B3F-10XX" value="" x="34.29" y="44.45" rot="R270">
-<attribute name="OC_NEWARK" value="36M3542" x="34.29" y="44.45" size="1.778" layer="27" rot="R270" display="off"/>
-<attribute name="MPN" value="B3F-1000" x="34.29" y="44.45" size="1.778" layer="27" rot="R270" display="off"/>
-<attribute name="MF" value="" x="34.29" y="44.45" size="1.778" layer="27" rot="R270" display="off"/>
-<attribute name="OC_FARNELL" value="176432" x="34.29" y="44.45" size="1.778" layer="27" rot="R270" display="off"/>
+<element name="S3" library="switch-omron" package="B3F-10XX" value="" x="55.74" y="8.7" rot="R270">
+<attribute name="OC_NEWARK" value="36M3542" x="55.74" y="8.7" size="1.778" layer="27" rot="R270" display="off"/>
+<attribute name="MPN" value="B3F-1000" x="55.74" y="8.7" size="1.778" layer="27" rot="R270" display="off"/>
+<attribute name="MF" value="" x="55.74" y="8.7" size="1.778" layer="27" rot="R270" display="off"/>
+<attribute name="OC_FARNELL" value="176432" x="55.74" y="8.7" size="1.778" layer="27" rot="R270" display="off"/>
 </element>
-<element name="S4" library="switch-omron" package="B3F-10XX" value="" x="45.72" y="44.45" rot="R270">
-<attribute name="OC_NEWARK" value="36M3542" x="45.72" y="44.45" size="1.778" layer="27" rot="R270" display="off"/>
-<attribute name="MPN" value="B3F-1000" x="45.72" y="44.45" size="1.778" layer="27" rot="R270" display="off"/>
-<attribute name="MF" value="" x="45.72" y="44.45" size="1.778" layer="27" rot="R270" display="off"/>
-<attribute name="OC_FARNELL" value="176432" x="45.72" y="44.45" size="1.778" layer="27" rot="R270" display="off"/>
+<element name="S4" library="switch-omron" package="B3F-10XX" value="" x="68.32" y="8.7" rot="R270">
+<attribute name="OC_NEWARK" value="36M3542" x="68.32" y="8.7" size="1.778" layer="27" rot="R270" display="off"/>
+<attribute name="MPN" value="B3F-1000" x="68.32" y="8.7" size="1.778" layer="27" rot="R270" display="off"/>
+<attribute name="MF" value="" x="68.32" y="8.7" size="1.778" layer="27" rot="R270" display="off"/>
+<attribute name="OC_FARNELL" value="176432" x="68.32" y="8.7" size="1.778" layer="27" rot="R270" display="off"/>
 </element>
-<element name="U$1" library="ESP12E_DEVKIT" package="ESP12E_DEVKIT" value="ESP12E_DEVKIT" x="68.58" y="26.67" rot="R180"/>
-<element name="JP1" library="pinhead" package="1X04" value="OLED" x="26.67" y="31.75"/>
+<element name="U$1" library="ESP12E_DEVKIT" package="ESP12E_DEVKIT" value="ESP12E_DEVKIT" x="27.53" y="35.83" rot="R270"/>
+<element name="JP1" library="pinhead" package="1X04" value="OLED" x="91.02" y="37.75" rot="R90"/>
 </elements>
 <signals>
-<signal name="N$1">
-<via x="12.58" y="19.05" extent="1-16" drill="1.6" shape="square"/>
-<via x="87.58" y="19.05" extent="1-16" drill="1.6" shape="square"/>
+<signal name="N$2">
+<via x="19.4" y="19.05" extent="1-16" drill="1.6" shape="square"/>
+<via x="90.9" y="19.05" extent="1-16" drill="1.6" shape="square"/>
 </signal>
 </signals>
 </board>
