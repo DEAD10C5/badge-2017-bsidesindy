@@ -34,7 +34,8 @@ http://www.instructables.com/id/Draw-Electronic-Schematics-with-CadSoft-EAGLE/st
 
 ### battery holder
 
-The pins for the battery holder are 7.5cm apart, and 1.5cm wide. I still haven't found an .lbr for this part. The part number is BH-18650-A if you want to try to search for it! 
+https://www.sparkfun.com/products/13113
+Note: This part can be found in the Electromechanical Eagle library under ‘Battery18650’.
 
 
 ### some notes
