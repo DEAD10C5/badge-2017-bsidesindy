@@ -1,3 +1,10 @@
+/*
+ * TEST CODE FOR PROTOTYPE BOARD 
+ * 
+ * 3/18/2017
+ * Author: @theDevilsVoice 
+ * 
+ */
 #include <SPI.h>
 #include <Wire.h>
 #include <Adafruit_GFX.h>
