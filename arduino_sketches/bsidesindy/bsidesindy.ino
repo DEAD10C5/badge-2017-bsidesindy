@@ -1,13 +1,4 @@
 /***************************************************
- 
- _                _      _                   _           
-| |__   __ _  ___| | __ | |__   __ _ _ __ __| | ___ _ __ 
-| '_ \ / _` |/ __| |/ / | '_ \ / _` | '__/ _` |/ _ \ '__|
-| | | | (_| | (__|   <  | | | | (_| | | | (_| |  __/ |   
-|_| |_|\__,_|\___|_|\_\ |_| |_|\__,_|_|  \__,_|\___|_|   
-                                                         
-  
-  
   Adafruit MQTT Library ESP8266 Example
 
   Must use ESP8266 Arduino from:
@@ -120,7 +111,7 @@ void loop() {
   }
 
   // Check for any button press
-  val = digitalRead(switchPin);   // read input value and store it in val
+  int val = digitalRead(switchPin);   // read input value and store it in val
   String msg="Button pressed";
   if (val == HIGH) {               // check if the button is pressed
     digitalWrite(LED_BUILTIN, LOW);   // turn LED on

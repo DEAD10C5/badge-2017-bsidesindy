@@ -56,17 +56,12 @@ ArcDirection=0
 AddLevel=2
 PadsSameType=0
 Layer=91
+Views=" 1: -28.9722 -17.5422 262.444 207.834"
 Sheet="1"
 
 [Win_2]
-Type="Control Panel"
-Loc="727 10 1326 409"
-State=2
-Number=0
-
-[Win_3]
 Type="Board Editor"
-Loc="123 76 1413 752"
+Loc="61 83 1351 759"
 State=2
 Number=1
 File="hh.brd"
@@ -109,6 +104,12 @@ ArcDirection=0
 AddLevel=2
 PadsSameType=0
 Layer=16
+
+[Win_3]
+Type="Control Panel"
+Loc="727 10 1326 409"
+State=2
+Number=0
 
 [Desktop]
 Screen="1600 900"
