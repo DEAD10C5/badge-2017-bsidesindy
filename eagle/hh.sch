@@ -755,9 +755,9 @@
 <pinref part="S2" gate="1" pin="S"/>
 <wire x1="22.86" y1="124.46" x2="25.4" y2="124.46" width="0.1524" layer="91"/>
 <junction x="25.4" y="124.46"/>
-<wire x1="48.26" y1="124.46" x2="48.26" y2="76.2" width="0.1524" layer="91"/>
-<pinref part="ESP12E_DEVKIT" gate="G$1" pin="D0"/>
-<wire x1="48.26" y1="76.2" x2="101.6" y2="76.2" width="0.1524" layer="91"/>
+<wire x1="48.26" y1="124.46" x2="48.26" y2="104.14" width="0.1524" layer="91"/>
+<pinref part="ESP12E_DEVKIT" gate="G$1" pin="RX"/>
+<wire x1="48.26" y1="104.14" x2="101.6" y2="104.14" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$9" class="0">
@@ -767,9 +767,9 @@
 <pinref part="S1" gate="1" pin="S"/>
 <wire x1="22.86" y1="147.32" x2="25.4" y2="147.32" width="0.1524" layer="91"/>
 <junction x="25.4" y="147.32"/>
-<pinref part="ESP12E_DEVKIT" gate="G$1" pin="RX"/>
-<wire x1="63.5" y1="147.32" x2="63.5" y2="104.14" width="0.1524" layer="91"/>
-<wire x1="63.5" y1="104.14" x2="101.6" y2="104.14" width="0.1524" layer="91"/>
+<wire x1="63.5" y1="147.32" x2="63.5" y2="106.68" width="0.1524" layer="91"/>
+<pinref part="ESP12E_DEVKIT" gate="G$1" pin="TX"/>
+<wire x1="63.5" y1="106.68" x2="101.6" y2="106.68" width="0.1524" layer="91"/>
 </segment>
 </net>
 </nets>
