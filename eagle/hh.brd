@@ -258,7 +258,7 @@
 <wire x1="53.746" y1="0.216140625" x2="48.11515" y2="0.14091875" width="0.001" layer="20"/>
 <hole x="163.83" y="43.18" drill="3.2"/>
 <text x="105.028" y="44.794" size="3.81" layer="21" font="vector">2017 @indybsides </text>
-<text x="137.67" y="45.222" size="3.81" layer="22" font="vector" rot="MR0">@p0lr_ @theDevilsVoice</text>
+<text x="161.292" y="45.222" size="3.81" layer="22" font="vector" rot="MR0">@p0lr_ @theDevilsVoice</text>
 <text x="107" y="40.286" size="1.778" layer="21" font="vector">H dlh dcaego uz aego ak.vol,vohs</text>
 <rectangle x1="87.122" y1="1.778" x2="98.298" y2="24.638" layer="16"/>
 <rectangle x1="-0.254" y1="17.526" x2="73.914" y2="22.352" layer="16"/>
