@@ -1390,10 +1390,10 @@ Various common sizes : AA, AAA, 18650 (PRT-12895), 20mm coin cell and 12mm coin 
 </class>
 </classes>
 <parts>
-<part name="S1" library="switch-omron" deviceset="10-XX" device=""/>
-<part name="S2" library="switch-omron" deviceset="10-XX" device=""/>
-<part name="S3" library="switch-omron" deviceset="10-XX" device=""/>
-<part name="S4" library="switch-omron" deviceset="10-XX" device=""/>
+<part name="DOWN" library="switch-omron" deviceset="10-XX" device=""/>
+<part name="ENTER" library="switch-omron" deviceset="10-XX" device=""/>
+<part name="ESC" library="switch-omron" deviceset="10-XX" device=""/>
+<part name="UP" library="switch-omron" deviceset="10-XX" device=""/>
 <part name="ESP12E_DEVKIT" library="ESP12E_DEVKIT" deviceset="ESP12E_DEVKIT" device=""/>
 <part name="FRAME1" library="frames" deviceset="FRAME_A_L" device=""/>
 <part name="JP1" library="pinhead" deviceset="PINHD-1X4" device="" value="OLED"/>
@@ -1405,10 +1405,10 @@ Various common sizes : AA, AAA, 18650 (PRT-12895), 20mm coin cell and 12mm coin 
 <plain>
 </plain>
 <instances>
-<instance part="S1" gate="1" x="22.86" y="142.24"/>
-<instance part="S2" gate="1" x="22.86" y="119.38"/>
-<instance part="S3" gate="1" x="22.86" y="91.44"/>
-<instance part="S4" gate="1" x="22.86" y="68.58"/>
+<instance part="DOWN" gate="1" x="22.86" y="142.24"/>
+<instance part="ENTER" gate="1" x="22.86" y="119.38"/>
+<instance part="ESC" gate="1" x="22.86" y="91.44"/>
+<instance part="UP" gate="1" x="22.86" y="68.58"/>
 <instance part="ESP12E_DEVKIT" gate="G$1" x="119.38" y="93.98" rot="R180"/>
 <instance part="FRAME1" gate="G$1" x="-22.86" y="-12.7"/>
 <instance part="FRAME1" gate="G$2" x="149.86" y="-12.7"/>
@@ -1445,11 +1445,11 @@ Various common sizes : AA, AAA, 18650 (PRT-12895), 20mm coin cell and 12mm coin 
 <net name="N$2" class="0">
 <segment>
 <pinref part="ESP12E_DEVKIT" gate="G$1" pin="D3"/>
-<pinref part="S4" gate="1" pin="S1"/>
+<pinref part="UP" gate="1" pin="S1"/>
 <wire x1="101.6" y1="83.82" x2="35.56" y2="83.82" width="0.1524" layer="91"/>
 <wire x1="35.56" y1="83.82" x2="35.56" y2="73.66" width="0.1524" layer="91"/>
 <wire x1="35.56" y1="73.66" x2="25.4" y2="73.66" width="0.1524" layer="91"/>
-<pinref part="S4" gate="1" pin="S"/>
+<pinref part="UP" gate="1" pin="S"/>
 <wire x1="22.86" y1="73.66" x2="25.4" y2="73.66" width="0.1524" layer="91"/>
 <junction x="25.4" y="73.66"/>
 </segment>
@@ -1457,20 +1457,20 @@ Various common sizes : AA, AAA, 18650 (PRT-12895), 20mm coin cell and 12mm coin 
 <net name="N$7" class="0">
 <segment>
 <pinref part="ESP12E_DEVKIT" gate="G$1" pin="D4"/>
-<pinref part="S3" gate="1" pin="S1"/>
+<pinref part="ESC" gate="1" pin="S1"/>
 <wire x1="101.6" y1="86.36" x2="35.56" y2="86.36" width="0.1524" layer="91"/>
 <wire x1="35.56" y1="86.36" x2="35.56" y2="96.52" width="0.1524" layer="91"/>
 <wire x1="35.56" y1="96.52" x2="25.4" y2="96.52" width="0.1524" layer="91"/>
-<pinref part="S3" gate="1" pin="S"/>
+<pinref part="ESC" gate="1" pin="S"/>
 <wire x1="22.86" y1="96.52" x2="25.4" y2="96.52" width="0.1524" layer="91"/>
 <junction x="25.4" y="96.52"/>
 </segment>
 </net>
 <net name="N$8" class="0">
 <segment>
-<pinref part="S2" gate="1" pin="S1"/>
+<pinref part="ENTER" gate="1" pin="S1"/>
 <wire x1="60.96" y1="124.46" x2="25.4" y2="124.46" width="0.1524" layer="91"/>
-<pinref part="S2" gate="1" pin="S"/>
+<pinref part="ENTER" gate="1" pin="S"/>
 <wire x1="22.86" y1="124.46" x2="25.4" y2="124.46" width="0.1524" layer="91"/>
 <junction x="25.4" y="124.46"/>
 <wire x1="60.96" y1="124.46" x2="60.96" y2="104.14" width="0.1524" layer="91"/>
@@ -1480,9 +1480,9 @@ Various common sizes : AA, AAA, 18650 (PRT-12895), 20mm coin cell and 12mm coin 
 </net>
 <net name="N$9" class="0">
 <segment>
-<pinref part="S1" gate="1" pin="S1"/>
+<pinref part="DOWN" gate="1" pin="S1"/>
 <wire x1="63.5" y1="147.32" x2="25.4" y2="147.32" width="0.1524" layer="91"/>
-<pinref part="S1" gate="1" pin="S"/>
+<pinref part="DOWN" gate="1" pin="S"/>
 <wire x1="22.86" y1="147.32" x2="25.4" y2="147.32" width="0.1524" layer="91"/>
 <junction x="25.4" y="147.32"/>
 <wire x1="63.5" y1="147.32" x2="63.5" y2="106.68" width="0.1524" layer="91"/>
@@ -1511,29 +1511,29 @@ Various common sizes : AA, AAA, 18650 (PRT-12895), 20mm coin cell and 12mm coin 
 <wire x1="101.6" y1="109.22" x2="66.04" y2="109.22" width="0.1524" layer="91"/>
 <wire x1="66.04" y1="109.22" x2="66.04" y2="149.86" width="0.1524" layer="91"/>
 <junction x="101.6" y="109.22"/>
-<pinref part="S4" gate="1" pin="P"/>
+<pinref part="UP" gate="1" pin="P"/>
 <wire x1="22.86" y1="63.5" x2="10.16" y2="63.5" width="0.1524" layer="91"/>
 <wire x1="10.16" y1="63.5" x2="10.16" y2="86.36" width="0.1524" layer="91"/>
 <wire x1="10.16" y1="86.36" x2="10.16" y2="114.3" width="0.1524" layer="91"/>
 <wire x1="10.16" y1="114.3" x2="10.16" y2="137.16" width="0.1524" layer="91"/>
-<pinref part="S3" gate="1" pin="P"/>
+<pinref part="ESC" gate="1" pin="P"/>
 <wire x1="22.86" y1="86.36" x2="10.16" y2="86.36" width="0.1524" layer="91"/>
 <junction x="10.16" y="86.36"/>
-<pinref part="S2" gate="1" pin="P"/>
+<pinref part="ENTER" gate="1" pin="P"/>
 <wire x1="22.86" y1="114.3" x2="10.16" y2="114.3" width="0.1524" layer="91"/>
 <junction x="10.16" y="114.3"/>
-<pinref part="S1" gate="1" pin="P"/>
+<pinref part="DOWN" gate="1" pin="P"/>
 <wire x1="22.86" y1="137.16" x2="10.16" y2="137.16" width="0.1524" layer="91"/>
-<pinref part="S1" gate="1" pin="P1"/>
+<pinref part="DOWN" gate="1" pin="P1"/>
 <wire x1="25.4" y1="137.16" x2="22.86" y2="137.16" width="0.1524" layer="91"/>
 <junction x="22.86" y="137.16"/>
-<pinref part="S2" gate="1" pin="P1"/>
+<pinref part="ENTER" gate="1" pin="P1"/>
 <wire x1="25.4" y1="114.3" x2="22.86" y2="114.3" width="0.1524" layer="91"/>
 <junction x="22.86" y="114.3"/>
-<pinref part="S3" gate="1" pin="P1"/>
+<pinref part="ESC" gate="1" pin="P1"/>
 <wire x1="25.4" y1="86.36" x2="22.86" y2="86.36" width="0.1524" layer="91"/>
 <junction x="22.86" y="86.36"/>
-<pinref part="S4" gate="1" pin="P1"/>
+<pinref part="UP" gate="1" pin="P1"/>
 <wire x1="25.4" y1="63.5" x2="22.86" y2="63.5" width="0.1524" layer="91"/>
 <junction x="22.86" y="63.5"/>
 <wire x1="66.04" y1="149.86" x2="10.16" y2="149.86" width="0.1524" layer="91"/>
