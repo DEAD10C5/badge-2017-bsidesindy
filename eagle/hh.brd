@@ -260,10 +260,10 @@
 <hole x="163.83" y="43.18" drill="3.2"/>
 <text x="161.292" y="45.222" size="3.81" layer="22" font="vector" rot="MR0">@p0lr_ @theDevilsVoice</text>
 <text x="150.561" y="39.905" size="1.778" layer="22" font="vector" rot="MR0">H dlh dcaego uz aego ak.vol,vohs</text>
-<text x="61.468" y="8.128" size="1.27" layer="21" rot="SR270">UP</text>
-<text x="87.376" y="8.636" size="1.27" layer="21" rot="SR270">DOWN</text>
-<text x="70.104" y="9.144" size="1.27" layer="21" rot="SR270">ENTER</text>
-<text x="78.74" y="8.128" size="1.27" layer="21" rot="SR270">ESC</text>
+<text x="87.0712" y="8.3566" size="1.27" layer="21" rot="SR270">UP</text>
+<text x="61.0108" y="9.5504" size="1.27" layer="21" rot="SR270">DOWN</text>
+<text x="69.723" y="10.0584" size="1.27" layer="21" rot="SR270">ENTER</text>
+<text x="78.359" y="8.9662" size="1.27" layer="21" rot="SR270">ESC</text>
 <rectangle x1="110.7567" y1="36.0045" x2="111.7473" y2="36.0807" layer="21"/>
 <rectangle x1="110.2995" y1="36.0807" x2="110.8329" y2="36.1569" layer="21"/>
 <rectangle x1="110.9091" y1="36.0807" x2="112.2807" y2="36.1569" layer="21"/>
