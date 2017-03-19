@@ -257,9 +257,9 @@
 <wire x1="59.36465" y1="0.33181875" x2="53.746" y2="0.216140625" width="0.001" layer="20"/>
 <wire x1="53.746" y1="0.216140625" x2="48.11515" y2="0.14091875" width="0.001" layer="20"/>
 <hole x="163.83" y="43.18" drill="3.2"/>
-<text x="135" y="42" size="1.778" layer="22" rot="MR0">2017 @indybsides </text>
-<text x="111" y="47" size="1.778" layer="21">@p0lr_ @theDevilsVoice</text>
-<text x="107" y="38" size="1.778" layer="21">H dlh dcaego uz aego ak.vol,vohs</text>
+<text x="105.028" y="44.794" size="3.81" layer="21" font="vector">2017 @indybsides </text>
+<text x="137.67" y="45.222" size="3.81" layer="22" font="vector" rot="MR0">@p0lr_ @theDevilsVoice</text>
+<text x="107" y="40.286" size="1.778" layer="21" font="vector">H dlh dcaego uz aego ak.vol,vohs</text>
 <rectangle x1="87.122" y1="1.778" x2="98.298" y2="24.638" layer="16"/>
 <rectangle x1="-0.254" y1="17.526" x2="73.914" y2="22.352" layer="16"/>
 <rectangle x1="14.986" y1="7.62" x2="73.914" y2="17.526" layer="16"/>
@@ -291,6 +291,10 @@
 <rectangle x1="-0.508" y1="22.352" x2="8.128" y2="45.72" layer="16"/>
 <rectangle x1="11.43" y1="22.352" x2="13.208" y2="26.162" layer="16"/>
 <rectangle x1="8.128" y1="22.352" x2="47.244" y2="22.606" layer="16"/>
+<text x="70.358" y="21.336" size="1.778" layer="21" font="fixed" rot="SR270">UP</text>
+<text x="70.612" y="10.16" size="1.778" layer="21" font="fixed" rot="SR270">DOWN</text>
+<text x="92.964" y="21.082" size="2.1844" layer="21" font="fixed" rot="SR270">ESC</text>
+<text x="93.218" y="11.684" size="1.778" layer="21" font="fixed" rot="SR270">ENTER</text>
 </plain>
 <libraries>
 <library name="switch-omron">
