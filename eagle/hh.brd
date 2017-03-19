@@ -261,6 +261,10 @@
 <text x="105.028" y="44.794" size="3.81" layer="21" font="vector">2017 @indybsides </text>
 <text x="161.292" y="45.222" size="3.81" layer="22" font="vector" rot="MR0">@p0lr_ @theDevilsVoice</text>
 <text x="107" y="40.286" size="1.778" layer="21" font="vector">H dlh dcaego uz aego ak.vol,vohs</text>
+<text x="61.468" y="8.128" size="1.27" layer="21" rot="SR270">UP</text>
+<text x="87.376" y="8.636" size="1.27" layer="21" rot="SR270">DOWN</text>
+<text x="70.104" y="9.144" size="1.27" layer="21" rot="SR270">ENTER</text>
+<text x="78.74" y="8.128" size="1.27" layer="21" rot="SR270">ESC</text>
 </plain>
 <libraries>
 <library name="switch-omron">
@@ -752,25 +756,25 @@ Please make sure your boards conform to these design rules.</description>
 </pass>
 </autorouter>
 <elements>
-<element name="DOWN" library="switch-omron" package="B3F-10XX" value="" x="83.586" y="7.43" rot="R270">
+<element name="...." library="switch-omron" package="B3F-10XX" value="" x="83.586" y="7.43" rot="R270">
 <attribute name="OC_NEWARK" value="36M3542" x="83.586" y="7.43" size="1.778" layer="27" rot="R270" display="off"/>
 <attribute name="MPN" value="B3F-1000" x="83.586" y="7.43" size="1.778" layer="27" rot="R270" display="off"/>
 <attribute name="MF" value="" x="83.586" y="7.43" size="1.778" layer="27" rot="R270" display="off"/>
 <attribute name="OC_FARNELL" value="176432" x="83.586" y="7.43" size="1.778" layer="27" rot="R270" display="off"/>
 </element>
-<element name="ENTER" library="switch-omron" package="B3F-10XX" value="" x="74.894" y="7.43" rot="R270">
+<element name="..." library="switch-omron" package="B3F-10XX" value="" x="74.894" y="7.43" rot="R270">
 <attribute name="OC_NEWARK" value="36M3542" x="74.894" y="7.43" size="1.778" layer="27" rot="R270" display="off"/>
 <attribute name="MPN" value="B3F-1000" x="74.894" y="7.43" size="1.778" layer="27" rot="R270" display="off"/>
 <attribute name="MF" value="" x="74.894" y="7.43" size="1.778" layer="27" rot="R270" display="off"/>
 <attribute name="OC_FARNELL" value="176432" x="74.894" y="7.43" size="1.778" layer="27" rot="R270" display="off"/>
 </element>
-<element name="ESC" library="switch-omron" package="B3F-10XX" value="" x="66.202" y="7.43" rot="R270">
+<element name=".." library="switch-omron" package="B3F-10XX" value="" x="66.202" y="7.43" rot="R270">
 <attribute name="OC_NEWARK" value="36M3542" x="66.202" y="7.43" size="1.778" layer="27" rot="R270" display="off"/>
 <attribute name="MPN" value="B3F-1000" x="66.202" y="7.43" size="1.778" layer="27" rot="R270" display="off"/>
 <attribute name="MF" value="" x="66.202" y="7.43" size="1.778" layer="27" rot="R270" display="off"/>
 <attribute name="OC_FARNELL" value="176432" x="66.202" y="7.43" size="1.778" layer="27" rot="R270" display="off"/>
 </element>
-<element name="UP" library="switch-omron" package="B3F-10XX" value="" x="57.51" y="7.43" rot="R270">
+<element name="." library="switch-omron" package="B3F-10XX" value="" x="57.51" y="7.43" rot="R270">
 <attribute name="OC_NEWARK" value="36M3542" x="57.51" y="7.43" size="1.778" layer="27" rot="R270" display="off"/>
 <attribute name="MPN" value="B3F-1000" x="57.51" y="7.43" size="1.778" layer="27" rot="R270" display="off"/>
 <attribute name="MF" value="" x="57.51" y="7.43" size="1.778" layer="27" rot="R270" display="off"/>
@@ -812,8 +816,8 @@ Please make sure your boards conform to these design rules.</description>
 </signal>
 <signal name="N$2">
 <contactref element="ESP12E_DEVKIT" pad="D3"/>
-<contactref element="UP" pad="2"/>
-<contactref element="UP" pad="1"/>
+<contactref element="." pad="2"/>
+<contactref element="." pad="1"/>
 <wire x1="59.7706" y1="10.6812" x2="59.7706" y2="4.1788" width="0.4064" layer="1"/>
 <wire x1="59.7706" y1="4.1788" x2="59.69" y2="4.1788" width="0.4064" layer="1"/>
 <wire x1="59.69" y1="4.1788" x2="59.69" y2="14.986" width="0.4064" layer="1"/>
@@ -822,8 +826,8 @@ Please make sure your boards conform to these design rules.</description>
 </signal>
 <signal name="N$7">
 <contactref element="ESP12E_DEVKIT" pad="D4"/>
-<contactref element="ESC" pad="2"/>
-<contactref element="ESC" pad="1"/>
+<contactref element=".." pad="2"/>
+<contactref element=".." pad="1"/>
 <wire x1="68.4626" y1="10.6812" x2="68.4626" y2="4.1788" width="0.4064" layer="1"/>
 <wire x1="68.4626" y1="4.1788" x2="68.326" y2="4.1788" width="0.4064" layer="1"/>
 <wire x1="68.326" y1="4.1788" x2="68.326" y2="16.002" width="0.4064" layer="1"/>
@@ -831,8 +835,8 @@ Please make sure your boards conform to these design rules.</description>
 <wire x1="32.102" y1="16.002" x2="32.102" y2="7.128" width="0.4064" layer="1"/>
 </signal>
 <signal name="N$8">
-<contactref element="ENTER" pad="2"/>
-<contactref element="ENTER" pad="1"/>
+<contactref element="..." pad="2"/>
+<contactref element="..." pad="1"/>
 <contactref element="ESP12E_DEVKIT" pad="RX"/>
 <wire x1="77.1546" y1="10.6812" x2="77.1546" y2="4.1788" width="0.4064" layer="1"/>
 <wire x1="77.1546" y1="4.1788" x2="76.962" y2="4.1788" width="0.4064" layer="1"/>
@@ -841,8 +845,8 @@ Please make sure your boards conform to these design rules.</description>
 <wire x1="14.322" y1="17.018" x2="14.322" y2="7.128" width="0.4064" layer="1"/>
 </signal>
 <signal name="N$9">
-<contactref element="DOWN" pad="2"/>
-<contactref element="DOWN" pad="1"/>
+<contactref element="...." pad="2"/>
+<contactref element="...." pad="1"/>
 <contactref element="ESP12E_DEVKIT" pad="TX"/>
 <wire x1="85.8466" y1="10.6812" x2="85.8466" y2="4.1788" width="0.4064" layer="1"/>
 <wire x1="85.8466" y1="4.1788" x2="85.852" y2="4.1788" width="0.4064" layer="1"/>
@@ -856,14 +860,14 @@ Please make sure your boards conform to these design rules.</description>
 <contactref element="ESP12E_DEVKIT" pad="GND@3"/>
 <contactref element="JP1" pad="2"/>
 <contactref element="ESP12E_DEVKIT" pad="GND@2"/>
-<contactref element="UP" pad="3"/>
-<contactref element="ESC" pad="3"/>
-<contactref element="ENTER" pad="3"/>
-<contactref element="DOWN" pad="3"/>
-<contactref element="DOWN" pad="4"/>
-<contactref element="ENTER" pad="4"/>
-<contactref element="ESC" pad="4"/>
-<contactref element="UP" pad="4"/>
+<contactref element="." pad="3"/>
+<contactref element=".." pad="3"/>
+<contactref element="..." pad="3"/>
+<contactref element="...." pad="3"/>
+<contactref element="...." pad="4"/>
+<contactref element="..." pad="4"/>
+<contactref element=".." pad="4"/>
+<contactref element="." pad="4"/>
 <wire x1="63.9414" y1="10.6812" x2="63.9414" y2="4.1788" width="0.4064" layer="16"/>
 <wire x1="81.3254" y1="7.366" x2="81.3254" y2="10.6812" width="0.4064" layer="16"/>
 <wire x1="72.6334" y1="10.6812" x2="72.6334" y2="4.1788" width="0.4064" layer="16"/>
