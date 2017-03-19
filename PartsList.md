@@ -27,7 +27,5 @@ These are optional pieces, only one breadboard is needed.
 
 | count | part | est cost |
 | --- | --- | --- |
-| 1 | [Blue 0.96 inch 128X64 OLED LCD LED Display Module For arduino IIC I2C Communicate] (https://m.aliexpress.com/item/32640627772.html ) | $3 | 
+| 1 | [Blue 0.96 inch 128X64 OLED LCD LED Display Module For arduino IIC I2C Communicate] (https://m.aliexpress.com/s/item/32697483355.html ) | $3 | 
 | 1 | 18650 3.7V/12000mAh Rechargeable Li-ion Battery | $5 |
-| 1 | Storage Box Case For 3.7v Li-ion 18650 Rechargeable Battery 2 Pins | $3 |
-
