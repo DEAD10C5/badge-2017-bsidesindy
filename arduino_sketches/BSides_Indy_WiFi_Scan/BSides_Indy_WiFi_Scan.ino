@@ -6,8 +6,6 @@
 #define ENTER 2
 #define DOWN 0
 
-
-
 SSD1306  display(0x3c, D2, D1);
 
 void setup() {
@@ -96,18 +94,20 @@ void loop() {
         DisplayUpdate = true;
       }
       if (digitalRead(ENTER) == LOW) {
-        char* net;
-        WiFi.SSID(WiFiIndex).toCharArray(net, 0);
-        char* pass;
 
         WiFi.disconnect();
-        WiFi.begin("SSID", "Password");
+        char ssid[] = "";
+        WiFi.SSID(WiFiIndex).toCharArray(ssid, (WiFi.SSID(WiFiIndex).length() +1));
+        
+        WiFi.begin(ssid);
 
         while(WiFi.status() != WL_CONNECTED) {
           display.clear();
           display.setTextAlignment(TEXT_ALIGN_LEFT);
           display.setFont(ArialMT_Plain_10);
-          display.drawString(0, 0, GetWiFiStatus(WiFi.status()));
+          String line1 = "Connecting to " + String(ssid);
+          display.drawString(0, 0, line1);
+          display.drawString(0, 10, GetWiFiStatus(WiFi.status()));
           display.display();
           delay(500);
         }
