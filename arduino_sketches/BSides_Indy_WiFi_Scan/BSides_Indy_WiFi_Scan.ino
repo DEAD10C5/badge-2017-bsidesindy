@@ -81,7 +81,7 @@ void loop() {
     }
     else
     {
-      if (digitalRead(DOWN) == LOW) {
+      if (digitalRead(UP) == LOW) {
         WiFiIndex--;
         DisplayUpdate = true;
         if (WiFiIndex < 0) {
@@ -101,7 +101,7 @@ void loop() {
         
         WiFi.begin(ssid);
 
-        while(WiFi.status() != WL_CONNECTED) {
+        while ((WiFi.status() != 3) && (digitalRead(ESC) != LOW)) {
           display.clear();
           display.setTextAlignment(TEXT_ALIGN_LEFT);
           display.setFont(ArialMT_Plain_10);
@@ -112,18 +112,26 @@ void loop() {
           delay(500);
         }
         
-        display.clear();
-        display.setTextAlignment(TEXT_ALIGN_LEFT);
-        display.setFont(ArialMT_Plain_10);
-        String line1 = "Connected";
-        String line2 = "IP Address: " + String(WiFi.localIP()[0]) + "." + String(WiFi.localIP()[1]) + "." + String(WiFi.localIP()[2]) + "." + String(WiFi.localIP()[3]);
-        display.drawString(0, 0, line1);
-        display.drawString(0, 10, line2);
-        display.display();
-        delay(500);
+        if (WiFi.status() == 3) {
+          display.clear();
+          display.setTextAlignment(TEXT_ALIGN_LEFT);
+          display.setFont(ArialMT_Plain_10);
+          String line1 = "Connected";
+          String line2 = "IP Address: " + String(WiFi.localIP()[0]) + "." + String(WiFi.localIP()[1]) + "." + String(WiFi.localIP()[2]) + "." + String(WiFi.localIP()[3]);
+          display.drawString(0, 0, line1);
+          display.drawString(0, 10, line2);
+          display.display();
+          delay(500);
+        }
+
+        if (digitalRead(ESC) == LOW) {
+          WiFiScanned = 0;
+          WiFiIndex = 0;
+          DisplayUpdate = true;
+        }
         
       }
-      if (digitalRead(UP) == LOW) {
+      if (digitalRead(DOWN) == LOW) {
         WiFiIndex++;
         DisplayUpdate = true;
         if (WiFiIndex > WiFiCount - 1) {
