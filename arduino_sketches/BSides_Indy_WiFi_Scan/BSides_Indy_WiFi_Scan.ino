@@ -117,7 +117,7 @@ void loop() {
           display.setTextAlignment(TEXT_ALIGN_LEFT);
           display.setFont(ArialMT_Plain_10);
           String line1 = "Connected";
-          String line2 = "IP Address: " + String(WiFi.localIP()[0]) + "." + String(WiFi.localIP()[1]) + "." + String(WiFi.localIP()[2]) + "." + String(WiFi.localIP()[3]);
+          String line2 = "IP: " + String(WiFi.localIP()[0]) + "." + String(WiFi.localIP()[1]) + "." + String(WiFi.localIP()[2]) + "." + String(WiFi.localIP()[3]);
           display.drawString(0, 0, line1);
           display.drawString(0, 10, line2);
           display.display();
@@ -173,8 +173,12 @@ void loop() {
     }
   }
   else {
-    delay(1);
-    //This is a placeholder for what to do when connected to the WiFi
+    if (digitalRead(ESC) == LOW) {
+      WiFi.disconnect();
+      WiFiScanned = false;
+      WiFiIndex = 0;
+      DisplayUpdate = true;
+    }  
   }
 }
 /**
