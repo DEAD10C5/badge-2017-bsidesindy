@@ -1,12 +1,10 @@
 #include "SSD1306.h" // alias for `#include "SSD1306Wire.h"`
 #include "ESP8266WiFi.h"
-
 #define UP 1
 #define ESC 3
 #define ENTER 2
 #define DOWN 0
-
-SSD1306  display(0x3c, D2, D1);
+SSD1306 display(0x3c, D2, D1);
 
 void setup() {
   display.init();
@@ -19,36 +17,44 @@ void setup() {
   pinMode(DOWN, INPUT_PULLUP);
 }
 
+String BadSSID[] = "";
+
 String GetWiFiStatus(int StatusCode) {
-  String output;
   if (StatusCode == 255) {
-    output = "No Shield";
+    return("No Shield");
+  } else if (StatusCode == 0) {
+    return("Idle");
+  } else if (StatusCode == 1) {
+    return("SSID Unavailable");
+  } else if (StatusCode == 2) {
+    return("Scan Completed");
+  } else if (StatusCode == 3) {
+    return("Connected");
+  } else if (StatusCode == 4) {
+    return("Connect Failed");
+  } else if (StatusCode == 5) {
+    return("Connection Lost");
+  } else if (StatusCode == 6) {
+    return("Disconnected");
+  } else {
+    return("Unknown State " + String(StatusCode));
   }
-  else if (StatusCode == 0) {
-    output = "Idle";
+}
+
+String GetWiFiEncryption(int StatusCode) {
+  if (StatusCode == 2) {
+    return("WPA PSK");
+  } else if (StatusCode == 4) {
+    return("WPA2 PSK");
+  } else if (StatusCode == 5) {
+    return("WEP");
+  } else if (StatusCode == 7) {
+    return("None");
+  } else if (StatusCode == 8) {
+    return("WPA/WPA2");
+  } else {
+    return("Unknown");
   }
-  else if (StatusCode == 1) {
-    output = "No SSID Available";
-  }
-  else if (StatusCode == 2) {
-    output = "Scan Completed";
-  }
-  else if (StatusCode == 3) {
-    output = "Connected";
-  }
-  else if (StatusCode == 4) {
-    output = "Connect Failed";
-  }
-  else if (StatusCode == 5) {
-    output = "Connection Lost";
-  }
-  else if (StatusCode == 6) {
-    output = "Disconnected";
-  }
-  else {
-    output = "Unknown State " + String(StatusCode);
-  }
-  return output;
 }
 
 bool WiFiScanned = false;
@@ -57,7 +63,7 @@ int WiFiCount = 0;
 bool DisplayUpdate = true;
 
 void loop() {
-  if(WiFi.status() != WL_CONNECTED) {
+  if(WiFi.status() != 3) {
     if(!WiFiScanned)
     {
       display.clear();
@@ -105,8 +111,7 @@ void loop() {
           display.clear();
           display.setTextAlignment(TEXT_ALIGN_LEFT);
           display.setFont(ArialMT_Plain_10);
-          String line1 = "Connecting to " + String(ssid);
-          display.drawString(0, 0, line1);
+          display.drawString(0, 0, "Connecting to " + String(ssid));
           display.drawString(0, 10, GetWiFiStatus(WiFi.status()));
           display.display();
           delay(500);
@@ -116,10 +121,8 @@ void loop() {
           display.clear();
           display.setTextAlignment(TEXT_ALIGN_LEFT);
           display.setFont(ArialMT_Plain_10);
-          String line1 = "Connected";
-          String line2 = "IP: " + String(WiFi.localIP()[0]) + "." + String(WiFi.localIP()[1]) + "." + String(WiFi.localIP()[2]) + "." + String(WiFi.localIP()[3]);
-          display.drawString(0, 0, line1);
-          display.drawString(0, 10, line2);
+          display.drawString(0, 0, "Connected");
+          display.drawString(0, 10, "IP: " + String(WiFi.localIP()[0]) + "." + String(WiFi.localIP()[1]) + "." + String(WiFi.localIP()[2]) + "." + String(WiFi.localIP()[3]));
           display.display();
           delay(500);
         }
@@ -135,7 +138,7 @@ void loop() {
         WiFiIndex++;
         DisplayUpdate = true;
         if (WiFiIndex > WiFiCount - 1) {
-          WiFiIndex = WiFiCount -1;
+          WiFiIndex = WiFiCount - 1;
         }
       }
 
@@ -143,29 +146,11 @@ void loop() {
         display.clear();
         display.setTextAlignment(TEXT_ALIGN_LEFT);
         display.setFont(ArialMT_Plain_10);
-        String line1 = "Networks: " + String(WiFiCount);
-        display.drawString(0, 0, line1);
-        String line2 = String(WiFiIndex + 1) + ": " + WiFi.SSID(WiFiIndex);
-        display.drawString(0, 10, line2);
-        String line3 = "Channel: " + String(WiFi.channel(WiFiIndex));
-        display.drawString(0, 20, line3);
-        String line4 = "Strength: " + String(WiFi.RSSI(WiFiIndex));
-        display.drawString(0, 30, line4);
-        String line5;
-        if (WiFi.encryptionType(WiFiIndex) == 2) {
-         line5 = "Encryption: WPA PSK";
-        } else if (WiFi.encryptionType(WiFiIndex) == 4) {
-         line5 = "Encryption: WPA2 PSK";
-        } else if (WiFi.encryptionType(WiFiIndex) == 5) {
-         line5 = "Encryption: WEP";
-        } else if (WiFi.encryptionType(WiFiIndex) == 7) {
-         line5 = "Encryption: None";
-        } else if (WiFi.encryptionType(WiFiIndex) == 8) {
-         line5 = "Encryption: WPA/WPA2";
-        } else {
-         line5 = "Encryption: Unknown";
-        }
-        display.drawString(0, 40, line5);
+        display.drawString(0, 0, "Networks: " + String(WiFiCount));
+        display.drawString(0, 10, String(WiFiIndex + 1) + ": " + WiFi.SSID(WiFiIndex));
+        display.drawString(0, 20, "Channel: " + String(WiFi.channel(WiFiIndex)));
+        display.drawString(0, 30, "Strength: " + String(WiFi.RSSI(WiFiIndex)));
+        display.drawString(0, 40, "Encryption: " + GetWiFiEncryption(WiFi.encryptionType(WiFiIndex)));
         display.display();
         DisplayUpdate = false;
         delay(200);
