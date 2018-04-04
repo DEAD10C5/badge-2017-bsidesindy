@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle version="7.5.0">
+<eagle version="8.7.1">
 <drawing>
 <settings>
 <setting alwaysvectorfont="no"/>
+<setting keepoldvectorfont="yes"/>
 <setting verticaltext="up"/>
 </settings>
 <grid distance="0.1" unitdist="inch" unit="inch" style="lines" multiple="1" display="no" altdistance="0.01" altunitdist="inch" altunit="inch"/>
@@ -1367,6 +1368,7 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <sheet>
 <description>hackharder</description>
 <plain>
+<text x="154.94" y="15.24" size="5.08" layer="91">DE:AD:10:C5</text>
 </plain>
 <instances>
 <instance part="...." gate="1" x="22.86" y="142.24"/>
