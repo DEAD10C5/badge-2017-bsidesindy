@@ -3,7 +3,7 @@ name: "kibot"
 on:
   push:
     paths:
-      - 'kicad_new/*.sch'
+      - 'kicad_new/*.kicad_sch'
       - 'kicad_new/*.kicad_pcb'
       - '.github/workflows/kibot.yml'
 
