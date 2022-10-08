@@ -20,7 +20,7 @@ jobs:
 
     - name: Design Test
       run: |
-        cd kicad && kibot --quick-start
+        cd kicad_new && kibot --quick-start
     - name: Retrieve results
       uses: actions/upload-artifact@v3
       with:
